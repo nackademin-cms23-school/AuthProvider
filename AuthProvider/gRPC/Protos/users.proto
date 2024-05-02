@@ -1,0 +1,66 @@
+syntax = "proto3";
+
+option csharp_namespace = "AuthProvider";
+
+package users;
+
+service UserService {
+	rpc CreateUser(CreateRequest) returns (CreateResponse) {}
+	rpc GetUsers(GetAllRequest) returns (GetAllResponse) {}
+	rpc GetUser(GetRequest) returns (GetResponse) {}
+	rpc GetByEmail(GetByEmailRequest) returns (GetByEmailResponse) {}
+	rpc UpdateUser(UpdateUserRequest) returns (UpdateUserResponse) {}
+	rpc DeleteUser(DeleteUserRequest) returns (DeleteUserResponse) {}
+}
+
+message CreateRequest {
+	string firstName = 1;
+	string lastName = 2;
+	string email = 3;
+	string password = 4;
+}
+
+message CreateResponse {
+	string message = 1;
+}
+
+message GetAllRequest {
+
+}
+
+message GetAllResponse {
+	string message = 1;
+}
+
+message GetRequest {
+	string id = 1;
+}
+
+message GetResponse {
+	string message = 1;
+}
+
+message GetByEmailRequest {
+	string email = 1;
+}
+
+message GetByEmailResponse {
+	string message = 1;
+}
+
+message UpdateUserRequest {
+	string id = 1;
+	string email = 2;
+}
+
+message UpdateUserResponse {
+	string message = 1;
+}
+
+message DeleteUserRequest {
+	string id = 1;
+}
+
+message DeleteUserResponse {
+	string message = 1;
+}
