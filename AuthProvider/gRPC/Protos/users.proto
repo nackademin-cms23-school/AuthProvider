@@ -50,7 +50,8 @@ message GetByEmailResponse {
 
 message UpdateUserRequest {
 	string id = 1;
-	string email = 2;
+	string firstName = 2;
+	string lastName = 3;
 }
 
 message UpdateUserResponse {
